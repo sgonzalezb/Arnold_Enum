@@ -2,7 +2,30 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+import edu.pingpong.arnold.logica.Planeta;
+
+public class Arnold {
+	
+	 public static void main(String[] args) {
+		 
+		 double peso = 1.0; // kg
+		 
+         for(Planeta planeta : Planeta.values()){
+        	 System.out.printf("Your weight on %s is %f N%n", planeta.name(), planeta.pesoSuperficie(peso));
+         }
+         
+         System.out.println("\nYour weight only on the terrestrial planets: ");
+         for(Planeta planeta: Planeta.getPlanetasTerrestres()){
+        	 System.out.printf("Your weight on %s is %f N%n", planeta.name(), planeta.pesoSuperficie(peso));
+         }
+         
+         System.out.println("\nYour weight only on the gas giant planets: ");
+         for(Planeta planeta: Planeta.getGigantesGaseosos()){
+        	 System.out.printf("Your weight on %s is %f N%n", planeta.name(), planeta.pesoSuperficie(peso));
+         }
+	 }
+
+}  <modelVersion>4.0.0</modelVersion>
 
   <groupId>edu.pingpong</groupId>
   <artifactId>Arnold</artifactId>
